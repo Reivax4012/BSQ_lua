@@ -27,8 +27,8 @@ end
 
 file:close()
 
-local line = array[1]
-for _, value in ipairs(line) do
-    io.write(value .. " ")
-end
-io.write("\n")
+-- local line = array[1]
+-- for _, value in ipairs(line) do
+--     io.write(value .. " ")
+-- end
+-- io.write("\n")
