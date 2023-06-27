@@ -27,12 +27,6 @@ end
 
 file:close()
 
--- local line = array[1]
--- for _, value in ipairs(line) do
---     io.write(value .. " ")
--- end
--- io.write("\n")
-
 local rows = #array
 local cols = #array[1]
 
@@ -58,19 +52,15 @@ for i = 1, rows do
 
         if temp[i][j] > maxSquareSize then
             maxSquareSize = temp[i][j]
-            maxSquareRow = i
-            maxSquareCol = j
+            maxSquareRow = i - maxSquareSize + 1
+            maxSquareCol = j - maxSquareSize + 1
         end
     end
 end
 
 if maxSquareSize > 0 then
-    print("biggest square:")
-    for i = maxSquareRow - maxSquareSize + 1, maxSquareRow do
-        for j = maxSquareCol - maxSquareSize + 1, maxSquareCol do
-            io.write(array[i][j] .. " ")
-        end
-        io.write("\n")
-    end
+    print("Coordinates of the largest square:")
+    print("Top-left corner: (" .. maxSquareRow + 1 .. ", " .. maxSquareCol .. ")")
+    print("Bottom-right corner: (" .. (maxSquareRow + maxSquareSize) .. ", " .. (maxSquareCol + maxSquareSize - 1) .. ")")
 end
 
